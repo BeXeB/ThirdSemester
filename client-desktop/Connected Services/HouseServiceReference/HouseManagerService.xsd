@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HouseManagerService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HouseManagerService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="House">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="Chat" nillable="true" type="tns:ArrayOfChatMessage" />
+      <xs:element minOccurs="0" name="Chores" nillable="true" type="tns:ArrayOfChore" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InviteCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="People" nillable="true" type="tns:ArrayOfPersonToHouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="House" nillable="true" type="tns:House" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloorNo" type="xs:short" />
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfChatMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChatMessage" nillable="true" type="tns:ChatMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChatMessage" nillable="true" type="tns:ArrayOfChatMessage" />
+  <xs:complexType name="ChatMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Sender" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChatMessage" nillable="true" type="tns:ChatMessage" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfChore">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chore" nillable="true" type="tns:Chore" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChore" nillable="true" type="tns:ArrayOfChore" />
+  <xs:complexType name="Chore">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="Status" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chore" nillable="true" type="tns:Chore" />
+  <xs:complexType name="ArrayOfPersonToHouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonToHouse" nillable="true" type="tns:PersonToHouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonToHouse" nillable="true" type="tns:ArrayOfPersonToHouse" />
+  <xs:complexType name="PersonToHouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsOwner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MoveInDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MoveOutDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonToHouse" nillable="true" type="tns:PersonToHouse" />
+  <xs:complexType name="ArrayOfHouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="House" nillable="true" type="tns:House" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHouse" nillable="true" type="tns:ArrayOfHouse" />
+</xs:schema>

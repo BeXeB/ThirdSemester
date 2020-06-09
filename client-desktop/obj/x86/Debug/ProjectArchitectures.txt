@@ -1,0 +1,1 @@
+D:\Sem. 3\Projv2\HouseManager\client-desktop\client-desktop.csproj;x86

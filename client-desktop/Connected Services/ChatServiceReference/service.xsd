@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/HouseManagerService" />
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HouseManagerService" minOccurs="0" name="message" nillable="true" type="q1:ChatMessage" />
+        <xs:element minOccurs="0" name="houseid" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChatMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="houseid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChatMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/HouseManagerService" minOccurs="0" name="GetChatMessagesResult" nillable="true" type="q2:ArrayOfChatMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

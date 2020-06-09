@@ -1,0 +1,12 @@
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\HouseManagerService.dll.config
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\HouseManagerService.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\HouseManagerService.pdb
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\HouseManagerServer.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\System.Data.SqlClient.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\HouseManagerServer.pdb
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\bin\Debug\System.Data.SqlClient.xml
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\obj\Debug\HouseManagerService.csprojAssemblyReference.cache
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\obj\Debug\HouseManagerService.csproj.CoreCompileInputs.cache
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\obj\Debug\HouseManagerService.csproj.CopyComplete
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\obj\Debug\HouseManagerService.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerService\obj\Debug\HouseManagerService.pdb

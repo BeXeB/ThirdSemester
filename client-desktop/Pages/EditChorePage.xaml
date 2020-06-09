@@ -1,0 +1,36 @@
+﻿<Page Loaded="FinishedLoading"
+    x:Class="client_desktop.Pages.EditChorePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:client_desktop"
+    xmlns:vms="using:client_desktop.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vms:ChoresViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <local:StatusToIntConverter x:Key="statusToIntConverter"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" x:Name="Name" Text="{x:Bind vms:ChoresViewModel.SelectedChore.Name, Mode=OneWay}" FontSize="20" Margin="0,5,10,5" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" x:Name="EndDate" Text="{x:Bind vms:ChoresViewModel.SelectedChore.EndDate, Mode=OneWay}" FontSize="20" Margin="0,5,10,5" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="2" x:Name="Status" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Margin="10" SelectedIndex="{x:Bind vms:ChoresViewModel.SelectedChore.Status, Mode=TwoWay, Converter={StaticResource statusToIntConverter}}" SelectionChanged="{x:Bind vms:ChoresViewModel.UpdateStatus}">
+            <ComboBoxItem>In Progress</ComboBoxItem>
+            <ComboBoxItem>Done</ComboBoxItem>
+            <ComboBoxItem>To Be Done</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.Row="3" Content="Join" Width="200" Height="50" HorizontalAlignment="Center" FontSize="20" Command="{Binding JoinChoreCommand}"/>
+    </Grid>
+</Page>

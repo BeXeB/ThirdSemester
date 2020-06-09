@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="client_desktop.Pages.ListsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vms="using:client_desktop.ViewModels"
+    xmlns:template="using:client_desktop.Models"
+    xmlns:local="using:client_desktop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vms:ListsViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Lists" FontSize="45" FontWeight="Medium"/>
+            <Button Content="Create" FontSize="40" Grid.Column="1" Width="200" Height="75" Command="{Binding GoToCreateCommand}"/>
+        </Grid>
+        <GridView Grid.Row="1" Margin="10, 20" ItemsSource="{Binding Lists}"
+                  ItemClick="{x:Bind vms:ListsViewModel.ClickList}"
+                  IsItemClickEnabled="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Visibility="{Binding IsList, Converter={StaticResource boolToVisibilityConverter}}">
+            <GridView.ItemTemplate>
+                <DataTemplate  x:DataType="template:ListItem">
+                    <Grid Margin="10" Height="100" Width="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.25*"/>
+                            <RowDefinition Height="0.75*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{x:Bind Title}" FontSize="20" FontWeight="Medium"/>
+                        <TextBlock Text="{x:Bind List}" FontSize="16" Grid.Row="1"/>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <Grid Grid.Row="1" Visibility="{Binding IsCreateList, Converter={StaticResource boolToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" PlaceholderText="Title" Text="{Binding CreateListTitle, Mode=TwoWay}" FontSize="20" Margin="10,5"/>
+            <TextBox Grid.Row="1" PlaceholderText="List" Text="{Binding CreateListList, Mode=TwoWay}" Margin="10,5" FontSize="16" AcceptsReturn="True"/>
+            <TextBlock Grid.Row="2" Foreground="Red" Text="{Binding ErrorMsg}" FontSize="20" TextAlignment="Center" Margin="10,5"/>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Cancel" Margin="10" HorizontalAlignment="Left" Command="{Binding CreateListCancelCommand}" FontSize="20" Grid.Column="0"/>
+                <Button Content="Create" Margin="10" HorizontalAlignment="Right" Command="{Binding CreateListCreateCommand}" FontSize="20" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

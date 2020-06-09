@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="client_desktop.Pages.AccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:client_desktop"
+    xmlns:vms="using:client_desktop.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vms:AccountViewModel/>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        <local:InvertVisibilityConverter x:Key="invertVisibilityConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Account" FontSize="70" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="{Binding ErrorMessage,Mode=TwoWay}" FontSize="20" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="User Name" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Margin="10" Text="{Binding UserName, Mode=TwoWay}"  FontSize="20"/>
+
+            <TextBlock Text="First Name" Grid.Row="2" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Margin="10" Text="{Binding FirstName, Mode=TwoWay}"  FontSize="20"/>
+
+            <TextBlock Text="Last Name" Grid.Row="4" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Margin="10" Text="{Binding LastName, Mode=TwoWay}"  FontSize="20"/>
+
+            <TextBlock Text="Phone" Grid.Row="6" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="7" Margin="10" Text="{Binding Phone, Mode=TwoWay}"  FontSize="20"/>
+
+            <TextBlock Text="Email" Grid.Row="8" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="9" Margin="10" Text="{Binding Email, Mode=TwoWay}"  FontSize="20"/>
+
+            <TextBlock Text="Password" Grid.Row="10" FontSize="24" FontWeight="Medium" Margin="10" VerticalAlignment="Center"/>
+            <PasswordBox Grid.Row="11" Margin="10" PlaceholderText="Old Password" Password="{Binding OldPassword, Mode=TwoWay}"  FontSize="20"/>
+            <PasswordBox Grid.Row="12" Margin="10" PlaceholderText="New Password" Password="{Binding NewPassword, Mode=TwoWay}" FontSize="20"/>
+        </Grid>
+        <Button Grid.Row="3" Width="200" Height="50" Margin="20" VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Right" Content="OK" Command="{Binding EditAccountOkCommand}"/>
+        <Button Grid.Row="3" Width="200" Height="50" Margin="20" VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Left" Content="Cancel" Command="{Binding EditAccountCancelCommand}"/>
+    </Grid>
+</Page>

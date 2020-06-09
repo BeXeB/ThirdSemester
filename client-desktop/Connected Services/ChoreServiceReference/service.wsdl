@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ChoreService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/HouseManagerService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IChoreService_CreateChore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChore" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_CreateChore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_JoinChore_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinChore" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_JoinChore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinChoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_UpdateStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_UpdateStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_GetChoresForHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChoresForHouse" />
+  </wsdl:message>
+  <wsdl:message name="IChoreService_GetChoresForHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChoresForHouseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IChoreService">
+    <wsdl:operation name="CreateChore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChoreService/CreateChore" message="tns:IChoreService_CreateChore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChoreService/CreateChoreResponse" message="tns:IChoreService_CreateChore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinChore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChoreService/JoinChore" message="tns:IChoreService_JoinChore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChoreService/JoinChoreResponse" message="tns:IChoreService_JoinChore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChoreService/UpdateStatus" message="tns:IChoreService_UpdateStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChoreService/UpdateStatusResponse" message="tns:IChoreService_UpdateStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChoresForHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChoreService/GetChoresForHouse" message="tns:IChoreService_GetChoresForHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChoreService/GetChoresForHouseResponse" message="tns:IChoreService_GetChoresForHouse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IChoreService" type="tns:IChoreService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateChore">
+      <soap:operation soapAction="http://tempuri.org/IChoreService/CreateChore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinChore">
+      <soap:operation soapAction="http://tempuri.org/IChoreService/JoinChore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/IChoreService/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChoresForHouse">
+      <soap:operation soapAction="http://tempuri.org/IChoreService/GetChoresForHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChoreService">
+    <wsdl:port name="BasicHttpBinding_IChoreService" binding="tns:BasicHttpBinding_IChoreService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/HouseManagerService/ChoreService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

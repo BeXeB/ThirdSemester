@@ -1,0 +1,70 @@
+﻿<Page x:ConnectionId='1'                         
+    x:Class="client_desktop.Pages.ViewHousePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:client_desktop.Pages"
+    xmlns:vms="using:client_desktop.ViewModels"
+    xmlns:template="using:client_desktop.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vms:ViewHouseViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:ConnectionId='8' Grid.Column="0"                             FontSize="20" Margin="10,5"/>
+                    <TextBlock x:ConnectionId='9' Grid.Column="1"                              FontSize="20" Margin="10,5"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:ConnectionId='4' Grid.Column="0"                           FontSize="20" Margin="10,5"/>
+                    <TextBlock x:ConnectionId='5' Grid.Column="1"                              FontSize="20" Margin="10,5"/>
+                    <TextBlock x:ConnectionId='6' Grid.Column="2"                            FontSize="20" Margin="10,5"/>
+                    <TextBlock x:ConnectionId='7' Grid.Column="3"                             FontSize="20" Margin="10,5"/>
+                </Grid>
+                <TextBlock x:ConnectionId='3' Grid.Row="2"                                 FontSize="20" Margin="10,5"/>
+            </Grid>
+        </Grid>
+        <Frame x:ConnectionId='2' x:Name="housePageFrame" Grid.Row="1" BorderThickness="2" BorderBrush="Black"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" FontSize="20" Content="Chores" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding GoToChoresCommand}"/>
+            <Button Grid.Column="1" FontSize="20" Content="Chat" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding GoToChatCommand}"/>
+            <Button Grid.Column="3" FontSize="20" Content="Leave" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding LeaveHouseCommand}"/>
+        </Grid>
+    </Grid>
+</Page>
+

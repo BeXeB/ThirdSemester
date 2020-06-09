@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6bd67797-b9a4-47f4-a193-a81607970d9a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/HouseManagerService/AccountService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6db1f245-ccbe-4fc3-949e-3efc243e749e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HouseManagerService/AccountService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4292ed43-01c2-4e9a-8f19-b1cb60f11f30" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HouseManagerService/AccountService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="06b29bfe-afe1-46ce-a873-5f24c85c757a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HouseManagerService/AccountService/mex" />
+    <MetadataFile FileName="HouseManagerService.xsd" MetadataType="Schema" ID="64630e1a-d00a-4d44-b1eb-0d41987a22bb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/HouseManagerService/AccountService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

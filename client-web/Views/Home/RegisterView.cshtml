@@ -1,0 +1,81 @@
+﻿@model client_web.Models.RegisterModel;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+    <div class="bs-example" style="border:2px solid gray;">
+
+        <div class="form-group centerlook">
+            <h1> Register </h1>
+        </div>
+        <div class="form-group centerlook">
+            <label>User Name: </label>
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <div class="form-group centerlook">
+            <label>First Name: </label>
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div class="form-group centerlook">
+            <label>Last Name: </label>
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div class="form-group centerlook">
+            <label>Phone: </label>
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+        <div class="form-group centerlook">
+            <label>Email: </label>
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="form-group centerlook">
+            <label>Date of Birth: </label>
+            <input type="date" name="DoB">
+        </div>
+        <div class="form-group centerlook">
+            <label>Password:</label>
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div class="form-group centerlook">
+            <label>Confirm Password:</label>
+            @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+        <div class="form-group error">
+            @if (@ViewBag.NotValidUser != null)
+            {
+
+                <label> @ViewBag.NotValidUser</label>
+            }
+        </div>
+        <div class="loginbtn">
+            <input type="submit" value="Register" class="btn btn-primary" />
+        </div>
+    </div>
+    }
+    <input type="button" class="btn btn-primary" value="Login" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+</body>
+</html>

@@ -1,0 +1,9 @@
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\bin\Debug\netstandard2.0\HouseManagerServer.deps.json
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\bin\Debug\netstandard2.0\HouseManagerServer.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\bin\Debug\netstandard2.0\HouseManagerServer.pdb
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.csproj.CoreCompileInputs.cache
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.AssemblyInfoInputs.cache
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.AssemblyInfo.cs
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.dll
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.pdb
+D:\Sem. 3\Projv2\HouseManager\HouseManagerServer\obj\Debug\netstandard2.0\HouseManagerServer.csprojAssemblyReference.cache

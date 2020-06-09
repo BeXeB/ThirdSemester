@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="client_desktop.JoinHousePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:client_desktop"
+    xmlns:vms="using:client_desktop.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vms:JoinHouseViewModel/>
+    </Page.DataContext>
+
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Join House" FontSize="70" Margin="10,5,10,5" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Grid.Row="0"/>
+        <TextBox x:ConnectionId='2' x:Name="inviteCodeText" 
+                     Text="{Binding InvitationCode, Mode=TwoWay}"
+                     VerticalAlignment="Top" Grid.Row="1"
+                     TextWrapping="Wrap" BorderThickness="1,1,1,1" PlaceholderText="Invite Code"
+                     FontSize="16" Margin="10,5,10,0"/>
+        <TextBlock Text="{Binding ErrorMessage, Mode=TwoWay}" Foreground="Red" FontSize="20" Margin="10,0,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button Content="Join" Command="{Binding JoinHouseCommand}" Grid.Row="3" Width="200" Height="50" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Page>
+
